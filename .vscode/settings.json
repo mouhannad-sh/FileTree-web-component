@@ -1,0 +1,32 @@
+{
+  "eslint.enable": true,
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/.typings": true,
+    "tags": true,
+    "**/www": true,
+    "**/sessions": true,
+    "**/.meteor/**": true
+  },
+  "breadcrumbs.enabled": true,
+  "javascript.validate.enable": false,
+  "editor.formatOnSave": true,
+  "[javascriptreact]": {
+    "editor.formatOnSave": false
+  },
+  "[javascript]": {
+    "editor.formatOnSave": false
+  },
+  "eslint.autoFixOnSave": true,
+  "eslint.alwaysShowStatus": true,
+  "javascript.format.enable": false,
+  "prettier.eslintIntegration": true,
+  "prettier.semi": false,
+  "eslint.options": {
+    "rules": {
+      "no-debugger": "off",
+      "semi": "off"
+    }
+  }
+}

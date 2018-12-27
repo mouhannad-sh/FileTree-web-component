@@ -1,0 +1,13 @@
+html,
+body {
+  margin: 0;
+}
+html {
+  min-height: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}

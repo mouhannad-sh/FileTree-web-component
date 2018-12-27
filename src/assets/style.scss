@@ -1,0 +1,111 @@
+.ft-node {
+  a {
+    display: inline-block;
+  }
+  &.ft-folder {
+    padding: 10px 0;
+    > .ft-presentation {
+      display: flex;
+      i {
+        margin-right: 6px;
+      }
+      > a {
+        border: 1px solid #ddd;
+        padding: 5px;
+      }
+    }
+
+    .ft-caret-icon svg {
+      transform: rotate(90deg);
+    }
+    &.ft-collapsed {
+      > .ft-children {
+        height: 0px !important;
+      }
+      > .ft-presentation .ft-caret-icon svg {
+        transform: rotate(0deg);
+      }
+    }
+    &.ft-dragover {
+      background: rgba(0, 102, 255, 0.39);
+    }
+  }
+
+  .ft-children {
+    padding-left: 20px;
+    transition: height 0.3s ease;
+    overflow: hidden;
+  }
+}
+
+.dark-theme {
+  background: #0d3a58;
+  &,
+  .ft-node {
+    a {
+      color: #ddd;
+      padding: 5px 8px;
+    }
+
+    &.ft-folder {
+      position: relative;
+      &:before {
+        content: "";
+        position: absolute;
+        left: 11px;
+        top: 34px;
+        bottom: -10px;
+        border-left: 1px dashed rgba(255, 255, 255, 0.3);
+      }
+      &:last-of-type {
+        &:before {
+          bottom: 25px;
+        }
+        &.ft-collapsed:before {
+          content: unset;
+        }
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        left: 30px;
+        height: 1px;
+        top: 14px;
+        border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
+      }
+      .ft-caret-icon svg {
+        fill: #ddd;
+      }
+
+      &.ft-dragover {
+        background: rgba(0, 102, 255, 0.39);
+      }
+    }
+    &.ft-file {
+      position: relative;
+      &:after {
+        content: "";
+        position: absolute;
+        left: -8px;
+        top: 14px;
+        right: 99%;
+        height: 1px;
+        border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
+      }
+    }
+  }
+}
+
+html,
+body {
+  margin: 0;
+}
+html {
+  min-height: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
